@@ -1,0 +1,13 @@
+[Unit]
+Description=Backend server for 1-wire bus control system
+Documentation=man:owserver(1)
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/owserver -c /etc/owfs.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+#Also=owserver.socket
+

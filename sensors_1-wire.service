@@ -1,0 +1,14 @@
+[Unit]
+Description=Backend data collector for 1-wire bus devices
+Documentation=man:sensors_1-wire(1)
+Requires=owserver.service
+After=owserver.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sensors_1-wire -c /etc/sensors/sensors_1-wire.conf
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

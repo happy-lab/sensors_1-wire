@@ -1,0 +1,25 @@
+#
+# One Wire File System configuration file for Raspberry PI B+ or later.
+#
+
+# bus master
+#server: device = /dev/i2c-1:ALL
+#server: device = /dev/i2c-1:18
+server: device = /dev/i2c-1
+
+# owserver
+server: port = 4304
+
+# make all clients use localhost
+! server: server = localhost:4304
+
+# owfs options
+mountpoint = /owfs
+allow_other
+
+# owhttpd
+http: port = 2121
+
+# owftpd
+ftp: port = 2120
+
